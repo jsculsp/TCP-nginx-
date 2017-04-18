@@ -11,7 +11,7 @@ def trace(source):
 # Example use
 if __name__ == '__main__':
     from sendto.nginx_log import nginx_log
-    from python_tail_f import follow
+    from sendto.python_tail_f import follow
 
     lines = follow('/var/log/nginx/3d.access.log')
     log = trace(nginx_log(lines))
