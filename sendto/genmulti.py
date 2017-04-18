@@ -25,3 +25,26 @@ def gen_multiplex(genlist):
         if item is StopIteration:
             return
         yield item
+
+
+# Example use
+#
+# This example requires you to perform these setup steps:
+#
+# 1.  Go to run/foo and run logsim.py
+# 2.  Go to run/bar and run logsim.py
+#
+# These two steps will start writing two different Apache log files.
+# Now, we're going to read from both at the same time.
+
+
+if __name__ == '__main__':
+    from python_tail_f import follow
+
+    log1 = follow("www/foo/access-log")
+    log2 = follow("www/bar/access-log")
+
+    log = gen_multiplex([log1, log2])
+
+    for line in log:
+        print(line)
