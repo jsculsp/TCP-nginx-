@@ -12,7 +12,7 @@ if __name__ == '__main__':
             self.name = name
 
         def send(self, item):
-            print self, "got", item
+            print("{} got {}".format(self, item))
 
         def __repr__(self):
             return self.name

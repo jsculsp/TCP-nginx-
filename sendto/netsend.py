@@ -27,7 +27,6 @@ if __name__ == '__main__':
             if item['status'] == 404:
                 super(Stat404, self).send(item)
 
-
     stat404 = Stat404(("192.168.4.248", 3333))
     lines = follow('/var/log/nginx/3d.access.log')
     log = nginx_log(lines)
