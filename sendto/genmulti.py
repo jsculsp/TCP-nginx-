@@ -41,8 +41,8 @@ def gen_multiplex(genlist):
 if __name__ == '__main__':
     from python_tail_f import follow
 
-    log1 = follow("www/foo/access-log")
-    log2 = follow("www/bar/access-log")
+    log1 = follow("../www/foo/access-log")
+    log2 = follow("../www/bar/access-log")
 
     log = gen_multiplex([log1, log2])
 
